@@ -12,13 +12,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Flipr2Transport" >
         <activity
-            android:name=".DriverHomePage"
+            android:name=".driver.DriverHomePage"
             android:exported="false" />
         <activity
-            android:name=".DealerAdvancedSearch"
+            android:name=".dealer.DealerAdvancedSearch"
             android:exported="false" />
         <activity
-            android:name=".DealerHomePage"
+            android:name=".dealer.DealerHomePage"
             android:exported="false" />
         <activity
             android:name=".LogInActivity"

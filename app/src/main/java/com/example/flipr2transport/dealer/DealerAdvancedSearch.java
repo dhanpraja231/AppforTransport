@@ -1,16 +1,24 @@
-package com.example.flipr2transport;
+package com.example.flipr2transport.dealer;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.AppCompatButton;
 import androidx.appcompat.widget.AppCompatSpinner;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 
+import com.example.flipr2transport.R;
+import com.example.flipr2transport.StateCityDatabaseAccess;
+
 import java.util.ArrayList;
 
 public class DealerAdvancedSearch extends AppCompatActivity {
+    RecyclerView mRecyclerView;
+    AppCompatButton mQueryDatabaseButton;
     AppCompatSpinner spSpinner;
     AppCompatSpinner cpSpinner;
     AppCompatSpinner sdSpinner;
@@ -21,11 +29,13 @@ public class DealerAdvancedSearch extends AppCompatActivity {
     ArrayAdapter<String> stateAdapter;
     ArrayAdapter<String> cpAdapter;
     ArrayAdapter<String> cdAdapter;
+    ArrayList<DriverModelObject> dataList;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dealer_advanced_search);
-
+        mRecyclerView = findViewById(R.id.dealer_advanced_recyclerview);
+        mQueryDatabaseButton = findViewById(R.id.confirm_advanced_search);
         spSpinner = findViewById(R.id.dealer_advanced_sp);
         cpSpinner  = findViewById(R.id.dealer_advanced_cp);
         sdSpinner = findViewById(R.id.dealer_advanced_sd);
@@ -87,10 +97,18 @@ public class DealerAdvancedSearch extends AppCompatActivity {
             }
             @Override
             public void onNothingSelected(AdapterView<?> adapterView) {
-
             }
         });
 
-        //populate recyclerView with dealers
+
+        mQueryDatabaseButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //TODO:query database by getting state and city from spinner selected text
+                dataList = new ArrayList<>(20); //dummy list
+                mRecyclerView.setAdapter(new DealerHomePageRVAdapter(DealerAdvancedSearch.this,dataList ));
+                mRecyclerView.setLayoutManager(new LinearLayoutManager(DealerAdvancedSearch.this));
+            }
+        });
     }
 }
