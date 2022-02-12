@@ -33,12 +33,12 @@ public class SignUpDealerFragment extends Fragment {
     ArrayAdapter<String> stateAdapter;
     ArrayAdapter<String> cityAdapter;
     public String state,city;
-    public String new_name,new_email,new_password,new_phone,new_nature,new_weight,new_quantity;
+    public String new_name,new_email,new_password,new_phone,new_nature,new_weight,new_quantity,new_state,new_city;
 
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle saverInstanceState){
         ViewGroup root = (ViewGroup) inflater.inflate(R.layout.sign_up_dealer_fragment,container,false);
-
+        EditText name = (EditText) root.findViewById(R.id.name_sign_dealer);
         EditText email = (EditText) root.findViewById(R.id.email_sign_dealer);
         EditText password = (EditText) root.findViewById(R.id.password_sign_dealer);
         EditText confirm_pass = (EditText) root.findViewById(R.id.confirm_password_sign_dealer);
@@ -95,18 +95,11 @@ public class SignUpDealerFragment extends Fragment {
         citySpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-//                city = adapterView.getItemAtPosition(i).toString();
-//                System.out.println(city);
-                if (adapterView.getItemAtPosition(i).equals("City")){ //make the first element of db a City?
 
-                }
-                else{
-                    city = adapterView.getItemAtPosition(i).toString();
-              System.out.println(city);
-                }
+                city = adapterView.getItemAtPosition(i).toString();
+                System.out.println(city);
 
             }
-
             @Override
             public void onNothingSelected(AdapterView<?> adapterView) {
 
@@ -122,7 +115,9 @@ public class SignUpDealerFragment extends Fragment {
                new_weight = material_weight.getText().toString();
                new_phone = phone.getText().toString();
                new_nature = material_type.getText().toString();
-
+                new_state = state;
+                new_city = city;
+                new_name = name.getText().toString();
 
 
                //mysql connector
@@ -160,8 +155,8 @@ login.execute("");
                 String result = "Database Connection Successful\n";
                 Statement st = con.createStatement();
 
-                int rs = st.executeUpdate("INSERT INTO `DEALER` (`EMAIL`, `PASSWORD`, `PHONE`, `NATURE`, `WEIGHT`, `QUANTITY`) " +
-                        "VALUES ('"+new_email+"', '"+new_password+"', '"+new_phone+"', '"+new_nature+"', '"+new_weight+"', '"+new_quantity+"');");
+                int rs = st.executeUpdate("INSERT INTO `DEALER` (`NAME`,`EMAIL`, `PASSWORD`, `PHONE`, `NATURE`, `WEIGHT`, `QUANTITY`, `STATE`, `CITY`) " +
+                        "VALUES ('"+new_name+"', '"+new_email+"', '"+new_password+"', '"+new_phone+"', '"+new_nature+"', '"+new_weight+"', '"+new_quantity+"', '"+new_state+"', '"+new_city+"');");
 
 
 
@@ -178,8 +173,8 @@ login.execute("");
         protected void onPostExecute(String s) {
             super.onPostExecute(s);
             Toast.makeText(getActivity(), "successfully signed up", Toast.LENGTH_SHORT).show();
-            Intent intent = new Intent(getActivity(), Homepage.class);  //from and to ----------------------------!!!!!!!!
-            startActivity(intent);  //to open login page
+//            Intent intent = new Intent(getActivity(), Homepage.class);  //from and to ----------------------------!!!!!!!!
+//            startActivity(intent);  //to open login page
         }
     }
 }
