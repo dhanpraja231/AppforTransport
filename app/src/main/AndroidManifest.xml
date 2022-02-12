@@ -11,6 +11,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Flipr2Transport">
         <activity
+            android:name=".DealerAdvancedSearch"
+            android:exported="false" />
+        <activity
+            android:name=".DealerHomePage"
+            android:exported="false" />
+        <activity
             android:name=".LogInActivity"
             android:exported="true">
             <intent-filter>
