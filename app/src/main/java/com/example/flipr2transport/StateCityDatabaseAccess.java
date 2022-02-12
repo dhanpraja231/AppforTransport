@@ -5,6 +5,8 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
+import java.util.ArrayList;
+
 public class StateCityDatabaseAccess {
     private SQLiteOpenHelper openHelper;
     private SQLiteDatabase db;
@@ -33,14 +35,15 @@ public class StateCityDatabaseAccess {
         }
     }
 
-    public String getAddress(String name){
-        c = db.rawQuery("select Address from Table1 where Name = '"+name +"'",new String[]{});
+
+    public ArrayList<String> getCities(String state){
+        c = db.rawQuery("select City from Main where State = '"+state +"'",new String[]{});
         StringBuffer buffer = new StringBuffer();
+        ArrayList<String> result = new ArrayList<>(20);
         while(c.moveToNext()){
-            String address = c.getString(0);
-            buffer.append(""+address);
+            result.add(c.getString(0));
         }
-        return buffer.toString();
+        return result;
 
 
     }
