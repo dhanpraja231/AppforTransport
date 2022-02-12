@@ -82,7 +82,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/password_sign_driver"
+        android:id="@+id/password_sign_dealer"
         android:layout_width="360sp"
         android:layout_height="wrap_content"
         android:hint="Create Password"
@@ -99,7 +99,7 @@
         app:layout_constraintVertical_bias="0.224" />
 
     <EditText
-        android:id="@+id/confirm_password_sign_driver"
+        android:id="@+id/confirm_password_sign_dealer"
         android:layout_width="360sp"
         android:layout_height="wrap_content"
         android:hint="Confirm Password"
@@ -115,7 +115,7 @@
         app:layout_constraintVertical_bias="0.313" />
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/signup_driver_button"
+        android:id="@+id/signup_dealer_button"
         android:layout_width="360sp"
 
         android:layout_height="wrap_content"
