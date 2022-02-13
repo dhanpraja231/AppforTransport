@@ -18,4 +18,17 @@ public class DealerModelObject {
         this.city = city;
         this.state = state;
     }
+
+    @Override
+    public String toString() {
+        return "DealerModelObject{" +
+                "name='" + name + '\'' +
+                ", material='" + material + '\'' +
+                ", mobile='" + mobile + '\'' +
+                ", weightOfMaterial='" + weightOfMaterial + '\'' +
+                ", quantity='" + quantity + '\'' +
+                ", city='" + city + '\'' +
+                ", state='" + state + '\'' +
+                '}';
+    }
 }

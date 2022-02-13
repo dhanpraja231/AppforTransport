@@ -16,6 +16,7 @@ import com.example.flipr2transport.LogInActivity;
 import com.example.flipr2transport.LogInFragment;
 import com.example.flipr2transport.R;
 import com.example.flipr2transport.dealer.DealerHomePage;
+import com.example.flipr2transport.dealer.DealerHomePageRVAdapter;
 import com.example.flipr2transport.dealer.DriverModelObject;
 
 import java.sql.Connection;
@@ -30,12 +31,14 @@ public class DriverHomePage extends AppCompatActivity {
     RecyclerView mRecyclerView;
     AppCompatButton logout,show;
     ArrayList<DealerModelObject> dataList;
+    RecyclerView.Adapter mAdapter;
 
 
     public String dealer_name;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        dataList = new ArrayList<>(20);
         setContentView(R.layout.activity_driver_home_page);
         logout = findViewById(R.id.driver_home_log_out_button);
         show = findViewById(R.id.driver_home_search_button);
@@ -44,7 +47,7 @@ public class DriverHomePage extends AppCompatActivity {
 
 
         //TODO: populate datalist from bookings table
-        dataList = new ArrayList<>(20);
+
 
         ConnectorLogin login = new ConnectorLogin();
         login.execute("");
@@ -52,9 +55,14 @@ public class DriverHomePage extends AppCompatActivity {
         show.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                System.out.println(dataList.toString()+"datalist");
-                mRecyclerView.setAdapter(new DriverHomePageRVAdapter(DriverHomePage.this,dataList ));
+
+                System.out.println(dataList+"datalist");
+                System.out.println(login.getDrivers()+"loging.getdriver");
+
+                mAdapter = new DriverHomePageRVAdapter(DriverHomePage.this,login.getDrivers());
                 mRecyclerView.setLayoutManager(new LinearLayoutManager(DriverHomePage.this));
+                mRecyclerView.setAdapter(mAdapter);
+
             }
         });
 
@@ -71,6 +79,7 @@ public class DriverHomePage extends AppCompatActivity {
 
     class ConnectorLogin extends AsyncTask<String,Void,String> {
         String res = "";
+        ArrayList<DealerModelObject> driver = new ArrayList<>(20);
 
         public static final String url = "jdbc:mysql://192.168.0.101:3306/FLIPR"; //ip of laptop and port of xampp
         public static final String user = "hema";
@@ -122,25 +131,20 @@ public class DriverHomePage extends AppCompatActivity {
                             DealerModelObject dealerModelObject = new DealerModelObject(dealer_name_db,dealer_material_db
                             ,dealer_mobile_db,dealer_weight_db,dealer_quantity_db,dealer_city_db,dealer_state_db);
 
-                            dataList.add(dealerModelObject);
+                            driver.add(dealerModelObject);
+
+                            System.out.println("dealerModel"+dealerModelObject);
+
 
 
                         }
-
-//
-
-                    //to add to recycler view
-//                    DealerModelObject dealerModelObject = new DealerModelObject(driver_name_db,driver_truck_num_db,driver_mobile_db,driver_capacity_db,driver_experience_db,driver_transporter_db,driver_age_db);
-//                    dataList.add(driverModelObject);
-
-                   // System.out.println(dataList);
 
 
                 }
 
                 dealer_name = result;
 
-
+result="";   System.out.println("dealermodel and list"+dataList);
                 res = result;
 
 
@@ -151,6 +155,11 @@ public class DriverHomePage extends AppCompatActivity {
                 throwables.printStackTrace();
             }
             return res;
+        }
+
+
+        protected ArrayList<DealerModelObject> getDrivers(){
+            return driver;
         }
 
 
