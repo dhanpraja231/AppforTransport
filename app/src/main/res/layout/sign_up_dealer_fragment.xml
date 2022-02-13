@@ -150,7 +150,7 @@
     <TextView
         android:layout_width="100sp"
         android:layout_height="wrap_content"
-        android:text="State"
+        android:text="Location"
         android:textAlignment="center"
         android:textColor="@color/white"
         android:textSize="20sp"
@@ -161,41 +161,28 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.745" />
 
-    <TextView
-        android:layout_width="100sp"
-        android:layout_height="wrap_content"
-        android:text="City"
-        android:textAlignment="center"
-        android:textColor="@color/white"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.083"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.816" />
 
     <androidx.appcompat.widget.AppCompatSpinner
         android:id="@+id/dealer_sign_spinner_state"
-        android:layout_width="250sp"
+        android:layout_width="130sp"
         android:layout_height="33sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.838"
+        app:layout_constraintHorizontal_bias="0.483"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.752" />
 
     <androidx.appcompat.widget.AppCompatSpinner
         android:id="@+id/dealer_sign_spinner_city"
-        android:layout_width="250sp"
+        android:layout_width="120sp"
         android:layout_height="33sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.838"
+        app:layout_constraintHorizontal_bias="0.914"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.823" />
+        app:layout_constraintVertical_bias="0.752" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
