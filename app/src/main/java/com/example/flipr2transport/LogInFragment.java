@@ -70,6 +70,12 @@ public class LogInFragment extends Fragment {
         Button login = (Button) root.findViewById(R.id.login_button);
         Button login_otp = (Button) root.findViewById(R.id.login_otp_button);
 
+        email.setText("gggg");
+        password.setText("frrfrf");
+
+
+
+
         login_otp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -281,6 +287,9 @@ public class LogInFragment extends Fragment {
                 String result = "Database Connection Successful\n";
                 String output = null;
                 Statement st = con.createStatement();
+                String namer_db = "";
+                String email_db = "";
+
 
                 ResultSet rs = st.executeQuery("SELECT * FROM `DRIVER` WHERE `EMAIL` = '"+email_entered+"' AND `PASSWORD` = '"+password_entered+"';");
 
@@ -290,17 +299,15 @@ public class LogInFragment extends Fragment {
                 //  user user1 = new user();
                 while (rs.next()) {                                         //-> to run with ddl
                     output += rs.getString(1).toString() + "\n"; // TO DETERMINE WHICH COLUMN INFO WE ARE GETTING!
-                    //   user1.name = rs.getString(1).toString();
-                    //   user1.email = rs.getString(2).toString();
-                    //   user1.phone = rs.getString(4);
+                    namer_db +=rs.getString(1);
+                    email_db +=rs.getString(3);
 
                 }
 
                 System.out.println("user"+output);
 
-                //  new_username = user1.getName();
-                //  new_email = user1.getEmail();
-                //   new_phone = user1.getPhone();
+                user_name = namer_db;
+                user_email = email_db;
                 res = output;
 
 
@@ -417,7 +424,8 @@ public class LogInFragment extends Fragment {
                 String result = "Database Connection Successful\n";
                 String output = "";
                 Statement st = con.createStatement();
-
+                String namer_db = "";
+                String email_db = "";
                 ResultSet rs = st.executeQuery("SELECT * FROM `DRIVER` WHERE `EMAIL` = '"+email_entered+"';");
 
 
@@ -426,17 +434,16 @@ public class LogInFragment extends Fragment {
                 //  user user1 = new user();
                 while (rs.next()) {                                         //-> to run with ddl
                     output += rs.getString(1).toString() + "\n"; // TO DETERMINE WHICH COLUMN INFO WE ARE GETTING!
-                    //   user1.name = rs.getString(1).toString();
-                    //   user1.email = rs.getString(2).toString();
-                    //   user1.phone = rs.getString(4);
 
+                    namer_db +=rs.getString(1);
+                    email_db +=rs.getString(3);
                 }
 
                 System.out.println("user"+output);
 
-                //  new_username = user1.getName();
-                //  new_email = user1.getEmail();
-                //   new_phone = user1.getPhone();
+
+                user_name = namer_db;
+                user_email = email_db;
                 res = output;
 
 

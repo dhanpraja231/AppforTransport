@@ -26,13 +26,14 @@ public class DriverHomePageRVAdapter extends RecyclerView.Adapter<DriverHomePage
 
     @NonNull
     @Override
-    public DriverHomePageViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public DriverHomePageRVAdapter.DriverHomePageViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = mInflater.inflate(R.layout.for_dealer_driver_data_viewholder_, parent, false);
         return new DriverHomePageViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull DriverHomePageViewHolder holder, int position) {
+        System.out.println("holder"+dataList.get(position).mobile);
         holder.mobileText.setText(dataList.get(position).mobile);
         holder.nameText.setText(dataList.get(position).name);
         holder.materialText.setText(dataList.get(position).material);
