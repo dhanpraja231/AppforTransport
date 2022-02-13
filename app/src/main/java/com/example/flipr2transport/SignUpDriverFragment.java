@@ -108,20 +108,20 @@ public class SignUpDriverFragment extends Fragment {
         cityArraycd2 = new ArrayList<>(20);
         cityArraycd3 = new ArrayList<>(20);
 
-        cityAdapterp1 = new ArrayAdapter<String>(this.getContext(), androidx.appcompat.R.layout.support_simple_spinner_dropdown_item);
+        cityAdapterp1 = new ArrayAdapter<String>(this.getContext(), R.layout.spinner_item);
         cityAdapterp1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        cityAdapterp2 = new ArrayAdapter<String>(this.getContext(), androidx.appcompat.R.layout.support_simple_spinner_dropdown_item);
+        cityAdapterp2 = new ArrayAdapter<String>(this.getContext(),R.layout.spinner_item);
         cityAdapterp2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        cityAdapterp3 = new ArrayAdapter<String>(this.getContext(), androidx.appcompat.R.layout.support_simple_spinner_dropdown_item);
+        cityAdapterp3 = new ArrayAdapter<String>(this.getContext(), R.layout.spinner_item);
         cityAdapterp3.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        cityAdapterd1 = new ArrayAdapter<String>(this.getContext(), androidx.appcompat.R.layout.support_simple_spinner_dropdown_item);
+        cityAdapterd1 = new ArrayAdapter<String>(this.getContext(), R.layout.spinner_item);
         cityAdapterd1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        cityAdapterd2 = new ArrayAdapter<String>(this.getContext(), androidx.appcompat.R.layout.support_simple_spinner_dropdown_item);
+        cityAdapterd2 = new ArrayAdapter<String>(this.getContext(), R.layout.spinner_item);
         cityAdapterd2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        cityAdapterd3 = new ArrayAdapter<String>(this.getContext(), androidx.appcompat.R.layout.support_simple_spinner_dropdown_item);
+        cityAdapterd3 = new ArrayAdapter<String>(this.getContext(),R.layout.spinner_item);
         cityAdapterd3.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
-        stateAdapter = new ArrayAdapter<String>(this.getContext(), androidx.appcompat.R.layout.support_simple_spinner_dropdown_item,stateArray);
+        stateAdapter = new ArrayAdapter<String>(this.getContext(), R.layout.spinner_item,stateArray);
         stateAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         stateSpinnersp1.setAdapter(stateAdapter);
         stateSpinnersp2.setAdapter(stateAdapter);

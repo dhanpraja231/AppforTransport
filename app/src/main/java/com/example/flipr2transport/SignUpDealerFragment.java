@@ -61,8 +61,8 @@ public class SignUpDealerFragment extends Fragment {
                 "Telangana","Tripura","Uttar Pradesh","Uttarakhand","West Bengal"};
         cityArray = new ArrayList<>(20);
 
-        stateAdapter = new ArrayAdapter<String>(this.getContext(), androidx.appcompat.R.layout.support_simple_spinner_dropdown_item,stateArray);
-        cityAdapter = new ArrayAdapter<String>(this.getContext(), androidx.appcompat.R.layout.support_simple_spinner_dropdown_item,cityArray);
+        stateAdapter = new ArrayAdapter<String>(this.getContext(), R.layout.spinner_item,stateArray);
+        cityAdapter = new ArrayAdapter<String>(this.getContext(), R.layout.spinner_item,cityArray);
         cityAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         stateAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         stateSpinner.setAdapter(stateAdapter);
