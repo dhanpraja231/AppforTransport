@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     >
 
+
     <EditText
         android:id="@+id/name_sign_dealer"
         android:layout_width="360sp"
@@ -20,7 +21,7 @@
         app:layout_constraintHorizontal_bias="0.509"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.045" />
+        app:layout_constraintVertical_bias="0.395" />
 
     <EditText
         android:id="@+id/email_sign_dealer"
@@ -36,13 +37,13 @@
         app:layout_constraintHorizontal_bias="0.509"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.13" />
+        app:layout_constraintVertical_bias="0.131" />
 
     <EditText
         android:id="@+id/mobile_sign_dealer"
         android:layout_width="360sp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="320dp"
+        android:layout_marginTop="332dp"
         android:hint="Mobile Number"
         android:inputType="number"
         android:minHeight="48dp"
@@ -57,7 +58,7 @@
         android:id="@+id/material_type_sign_dealer"
         android:layout_width="360sp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="268dp"
+        android:layout_marginTop="396dp"
         android:hint="Material type"
         android:minHeight="48dp"
         android:textColor="#D3D3D3"
@@ -66,7 +67,6 @@
         app:layout_constraintHorizontal_bias="0.509"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
 
     <EditText
         android:id="@+id/material_weight_sign_dealer"
@@ -81,19 +81,19 @@
         app:layout_constraintHorizontal_bias="0.892"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.568" />
+        app:layout_constraintVertical_bias="0.673" />
 
     <EditText
         android:id="@+id/material_quantity_sign_dealer"
         android:layout_width="170sp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="388dp"
+        android:layout_marginTop="460dp"
         android:hint="Material Quantity"
         android:minHeight="48dp"
         android:textColor="#D3D3D3"
         android:textColorHint="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.107"
+        app:layout_constraintHorizontal_bias="0.103"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -109,10 +109,10 @@
         android:textColorHint="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.49"
+        app:layout_constraintHorizontal_bias="0.509"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.224" />
+        app:layout_constraintVertical_bias="0.213" />
 
     <EditText
         android:id="@+id/confirm_password_sign_dealer"
@@ -128,7 +128,7 @@
         app:layout_constraintHorizontal_bias="0.509"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.313" />
+        app:layout_constraintVertical_bias="0.3" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/signup_dealer_button"
@@ -159,7 +159,7 @@
         app:layout_constraintHorizontal_bias="0.08"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.717" />
+        app:layout_constraintVertical_bias="0.745" />
 
     <TextView
         android:layout_width="100sp"
@@ -173,7 +173,7 @@
         app:layout_constraintHorizontal_bias="0.083"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.802" />
+        app:layout_constraintVertical_bias="0.816" />
 
     <androidx.appcompat.widget.AppCompatSpinner
         android:id="@+id/dealer_sign_spinner_state"
@@ -184,7 +184,7 @@
         app:layout_constraintHorizontal_bias="0.838"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.717" />
+        app:layout_constraintVertical_bias="0.752" />
 
     <androidx.appcompat.widget.AppCompatSpinner
         android:id="@+id/dealer_sign_spinner_city"
@@ -195,7 +195,7 @@
         app:layout_constraintHorizontal_bias="0.838"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.803" />
+        app:layout_constraintVertical_bias="0.823" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

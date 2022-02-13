@@ -55,7 +55,7 @@ public class SignUpDriverFragment extends Fragment {
     ArrayAdapter<String> cityAdapterd2;
     ArrayAdapter<String> cityAdapterd3;
 
-    public String new_name,new_email,new_phone,new_age,new_trucknum,new_capacity,new_transporter,new_exp,new_password;
+    public String new_name,new_email,new_phone,new_age,new_trucknum,new_capacity,new_transporter,new_exp,new_password,new_confirmpwd;
 
     public String from_state1,from_city1,to_state1,to_city1;
     public String from_state2,from_city2,to_state2,to_city2;
@@ -71,6 +71,7 @@ public class SignUpDriverFragment extends Fragment {
         EditText age =(EditText) root.findViewById(R.id.age_sign_driver);
         EditText truck_capacity =(EditText) root.findViewById(R.id.truck_capacity_sign_driver);
         EditText truck_num =(EditText) root.findViewById(R.id.truck_no_sign_driver);
+        EditText transporter =(EditText) root.findViewById(R.id.transporter_sign_driver);
         EditText experience =(EditText) root.findViewById(R.id.experience_sign_driver);
         EditText password =(EditText) root.findViewById(R.id.password_sign_driver);
         EditText confirm_pass =(EditText) root.findViewById(R.id.confirm_password_sign_driver);
@@ -344,12 +345,18 @@ public class SignUpDriverFragment extends Fragment {
                 new_exp = experience.getText().toString();
                 new_email = email.getText().toString();
                 new_name = name.getText().toString();
-                // new_transporter = tr.getText().toString();
+                new_transporter = transporter.getText().toString();
                 new_trucknum = truck_num.getText().toString();
                 new_password = password.getText().toString();
+                new_confirmpwd = confirm_pass.getText().toString();
+                if(new_password.equals(new_confirmpwd)){
+                    ConnectMySQL login = new ConnectMySQL();
+                    login.execute("");
+                }else{
+                    Toast.makeText(getActivity(),"kindly confirm password again",Toast.LENGTH_SHORT).show();
+                }
 
-                ConnectMySQL login = new ConnectMySQL();
-                login.execute("");
+
             }
         });
 

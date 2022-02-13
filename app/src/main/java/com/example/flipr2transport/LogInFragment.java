@@ -282,7 +282,6 @@ public class LogInFragment extends Fragment {
         protected void onPostExecute(String s) {
             System.out.println(s);
 
-
             if (s!=null){
                 Toast.makeText(getActivity(), "WELCOME BACK "+s, Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(getActivity(), Homepage.class);  //from and to ----------------------------!!!!!!!!

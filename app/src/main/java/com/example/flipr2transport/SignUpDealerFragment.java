@@ -33,7 +33,7 @@ public class SignUpDealerFragment extends Fragment {
     ArrayAdapter<String> stateAdapter;
     ArrayAdapter<String> cityAdapter;
     public String state,city;
-    public String new_name,new_email,new_password,new_phone,new_nature,new_weight,new_quantity,new_state,new_city;
+    public String new_name,new_email,new_password,new_phone,new_nature,new_weight,new_quantity,new_state,new_city,new_confirmpwd;
 
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle saverInstanceState){
@@ -111,6 +111,7 @@ public class SignUpDealerFragment extends Fragment {
            public void onClick(View view) {
                new_email = email.getText().toString();
                new_password = password.getText().toString();
+               new_confirmpwd = confirm_pass.getText().toString();
                new_quantity = material_quantity.getText().toString();
                new_weight = material_weight.getText().toString();
                new_phone = phone.getText().toString();
@@ -119,10 +120,12 @@ public class SignUpDealerFragment extends Fragment {
                 new_city = city;
                 new_name = name.getText().toString();
 
-
-               //mysql connector
-ConnectMySQL login = new ConnectMySQL();
-login.execute("");
+                if(new_confirmpwd.equals(new_password)){//mysql connector
+                    ConnectMySQL login = new ConnectMySQL();
+                    login.execute("");
+                }else{
+                    Toast.makeText(getActivity(),"kindly confirm password again",Toast.LENGTH_SHORT).show();
+                }
 
 
            }
