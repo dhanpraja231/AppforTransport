@@ -27,7 +27,7 @@ public class DriverHomePageRVAdapter extends RecyclerView.Adapter<DriverHomePage
     @NonNull
     @Override
     public DriverHomePageRVAdapter.DriverHomePageViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = mInflater.inflate(R.layout.for_dealer_driver_data_viewholder_, parent, false);
+        View view = mInflater.inflate(R.layout.for_driver_dealer_data_viewholder, parent, false);
         return new DriverHomePageViewHolder(view);
     }
 
@@ -66,13 +66,13 @@ public class DriverHomePageRVAdapter extends RecyclerView.Adapter<DriverHomePage
             quantityText = itemView.findViewById(R.id.dealer_holder_quantity);
             cityText = itemView.findViewById(R.id.dealer_holder_city);
             stateText = itemView.findViewById(R.id.dealer_holder_state);
-            itemView.findViewById(R.id.driver_holder_book_button).setOnClickListener(new View.OnClickListener(){
-                public void onClick(View v){
-                    System.out.println("button pressed for user "+ dataList.get(getAdapterPosition()).name);
-                    //TODO:
-                    //set status of booking pair to true
-                }
-            });
+//            itemView.findViewById(R.id.driver_holder_book_button).setOnClickListener(new View.OnClickListener(){
+//                public void onClick(View v){
+//                    System.out.println("button pressed for user "+ dataList.get(getAdapterPosition()).name);
+//                    //TODO:
+//                    //set status of booking pair to true
+//                }
+//            });
         }
 
 
