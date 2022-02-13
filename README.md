@@ -16,4 +16,9 @@ https://drive.google.com/file/d/1L-DUI8G8Q5aPk5EIeuL4sN7MnIHfsX_4/view?usp=shari
        
        after this  run the application on android studio emulator.
        
+for application screenshots and working and other relevant files, refer to :
+
+https://drive.google.com/drive/folders/1xhVbdFBb1hLFdg_VaAO6We6MB_hXsUNm?usp=sharing
+
+
     
