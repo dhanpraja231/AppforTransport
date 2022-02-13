@@ -70,8 +70,6 @@ public class LogInFragment extends Fragment {
         Button login = (Button) root.findViewById(R.id.login_button);
         Button login_otp = (Button) root.findViewById(R.id.login_otp_button);
 
-        email.setText("gggg");
-        password.setText("frrfrf");
 
 
 
@@ -537,7 +535,7 @@ public class LogInFragment extends Fragment {
 
             if (s!=null){
 
-                SendMail sm = new SendMail(getActivity(),email_entered,"OTP FOR LOGIN","YOUR OTP IS"+otp_gen);
+                SendMail sm = new SendMail(getActivity(),email_entered,"OTP FOR LOGIN","YOUR OTP IS  "+otp_gen);
                 sm.execute();
                Toast.makeText(getActivity(), "OTP has been sent", Toast.LENGTH_SHORT).show();
 
@@ -606,7 +604,7 @@ public class LogInFragment extends Fragment {
 
             if (s!=null){
 
-                SendMail sm = new SendMail(getActivity(),email_entered,"OTP FOR LOGIN","YOUR OTP IS"+otp_gen);
+                SendMail sm = new SendMail(getActivity(),email_entered,"OTP FOR LOGIN","YOUR OTP IS  "+otp_gen);
                 sm.execute();
                 Toast.makeText(getActivity(), "OTP has been sent", Toast.LENGTH_SHORT).show();
 

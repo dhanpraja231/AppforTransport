@@ -55,7 +55,7 @@ public class SignUpDriverFragment extends Fragment {
     ArrayAdapter<String> cityAdapterd2;
     ArrayAdapter<String> cityAdapterd3;
 
-    public String new_name,new_email,new_phone,new_age,new_trucknum,new_capacity,new_transporter,new_exp,new_password,new_confirmpwd;
+    public String new_transporter,new_name,new_email,new_phone,new_age,new_trucknum,new_capacity,new_exp,new_password,new_confirmpwd;
 
     public String from_state1,from_city1,to_state1,to_city1;
     public String from_state2,from_city2,to_state2,to_city2;
@@ -349,6 +349,7 @@ public class SignUpDriverFragment extends Fragment {
                 new_trucknum = truck_num.getText().toString();
                 new_password = password.getText().toString();
                 new_confirmpwd = confirm_pass.getText().toString();
+                new_transporter = transporter.getText().toString();
                 if(new_password.equals(new_confirmpwd)){
                     ConnectMySQL login = new ConnectMySQL();
                     login.execute("");
@@ -383,8 +384,8 @@ public class SignUpDriverFragment extends Fragment {
                 String result = "Database Connection Successful\n";
                 Statement st = con.createStatement();
 
-                int rs = st.executeUpdate("INSERT INTO `DRIVER` (`NAME`, `AGE`, `EMAIL`, `PHONE`, `TRUCK_NUM`, `CAPACITY`, `EXPERIENCE`, `FROM_STATE_1`, `FROM_CITY_1`, `TO_STATE_1`, `TO_CITY_1`, `FROM_STATE_2`, `FROM_CITY_2`, `TO_STATE_2`, `TO_CITY_2`, `FROM_STATE_3`, `FROM_CITY_3`,`TO_STATE_3`,`TO_CITY_3`, `PASSWORD`) " +
-                        "VALUES ('"+new_name+"', '"+new_age+"', '"+new_email+"', '"+new_phone+"', '"+new_trucknum+"', '"+new_capacity+"', '"+new_exp+"', '"+from_state1+"', '"+from_city1+"', '"+to_state1+"', '"+to_city1+"', '"+from_state2+"', '"+from_city2+"', '"+to_state2+"', '"+to_city2+"', '"+from_state3+"', '"+from_city3+"', '"+to_state3+"', '"+to_city3+"', '"+new_password+"');");
+                int rs = st.executeUpdate("INSERT INTO `DRIVER` (`NAME`, `AGE`, `EMAIL`, `PHONE`, `TRUCK_NUM`, `CAPACITY`, `EXPERIENCE`, `FROM_STATE_1`, `FROM_CITY_1`, `TO_STATE_1`, `TO_CITY_1`, `FROM_STATE_2`, `FROM_CITY_2`, `TO_STATE_2`, `TO_CITY_2`, `FROM_STATE_3`, `FROM_CITY_3`,`TO_STATE_3`,`TO_CITY_3`, `PASSWORD`, `TRANSPORTER`) " +
+                        "VALUES ('"+new_name+"', '"+new_age+"', '"+new_email+"', '"+new_phone+"', '"+new_trucknum+"', '"+new_capacity+"', '"+new_exp+"', '"+from_state1+"', '"+from_city1+"', '"+to_state1+"', '"+to_city1+"', '"+from_state2+"', '"+from_city2+"', '"+to_state2+"', '"+to_city2+"', '"+from_state3+"', '"+from_city3+"', '"+to_state3+"', '"+to_city3+"', '"+new_password+"', '"+new_transporter+"');");
 
 
 
