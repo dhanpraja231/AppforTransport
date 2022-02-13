@@ -76,6 +76,8 @@ public class DealerHomePageRVAdapter extends RecyclerView.Adapter<DealerHomePage
                     System.out.println("button pressed for user "+ dataList.get(getAdapterPosition()).name);
                     //TODO:
                     //add driver-dealer pair to booking table
+                    //ADD A ASYNC CONNECTOR MYSQL TO SEND DATA TO DB
+                    //TABLE: booking- drivername and dealer name;
                 }
             });
 

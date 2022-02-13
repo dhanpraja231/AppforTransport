@@ -106,6 +106,8 @@ public class DealerAdvancedSearch extends AppCompatActivity {
             public void onClick(View view) {
                 //TODO:query database by getting state and city from spinner selected text
                 dataList = new ArrayList<>(20); //dummy list
+          //      dataList.addAll()
+
                 mRecyclerView.setAdapter(new DealerHomePageRVAdapter(DealerAdvancedSearch.this,dataList ));
                 mRecyclerView.setLayoutManager(new LinearLayoutManager(DealerAdvancedSearch.this));
             }

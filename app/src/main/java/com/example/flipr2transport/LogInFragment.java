@@ -32,6 +32,7 @@ public class LogInFragment extends Fragment {
     public static final String url = "jdbc:mysql://192.168.0.101:3306/FLIPR"; //ip of laptop and port of xampp
     public static final String user = "hema";
     public static final String pass = "1234";
+
     Random random = new Random();
     // Generates random integers 0 to 49
     public int int_otp_gen = random.nextInt(10000);
@@ -68,6 +69,9 @@ public class LogInFragment extends Fragment {
         login_otp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                otp_entered = otp.getText().toString();
+
+                System.out.println(otp_entered+"otp"+otp_gen);
                     if (otp_entered.equals(otp_gen)){
                         int radioId = radioGroup.getCheckedRadioButtonId();
                         radioButton = (RadioButton) root.findViewById(radioId);
@@ -77,7 +81,8 @@ public class LogInFragment extends Fragment {
                         String driver = "DRIVER";
                         if (occupation.equals(driver)) {
 
-
+                            ConnectorLogindriver login = new ConnectorLogindriver();
+                            login.execute("");
                             //for driver
 
                         } else if (occupation.equals(dealer)) {
@@ -87,6 +92,9 @@ public class LogInFragment extends Fragment {
                             //for dealer
                         }
 
+                    }
+                    else{
+                        Toast.makeText(getActivity(), "wrong otp", Toast.LENGTH_SHORT).show();
                     }
             }
         });
@@ -134,7 +142,7 @@ public class LogInFragment extends Fragment {
             @Override
             public void onClick(View view) {
 
-
+                email_entered = email.getText().toString();
                 String dealer ="DEALER";
                 String driver = "DRIVER";
 
@@ -144,6 +152,9 @@ public class LogInFragment extends Fragment {
                 occupation = radioButton.getText().toString();
                 if(occupation.equals(driver)){
                     //for driver
+
+                    ConnectorLoginotpdriver login = new ConnectorLoginotpdriver();
+                    login.execute("");
 //                   ConnectorLogin2 login2 = new ConnectorLogin2();
 //                    login2.execute("");
                 }
@@ -361,6 +372,71 @@ public class LogInFragment extends Fragment {
     }
 
 
+    private class ConnectorLogindriver extends AsyncTask<String,Void,String> {
+        String res = "";
+        @Override
+        protected String doInBackground(String... strings) {
+            try {
+                Class.forName("com.mysql.jdbc.Driver");
+                Connection con = DriverManager.getConnection(url, user, pass);
+                System.out.println("Databaseection success");
+
+                String result = "Database Connection Successful\n";
+                String output = "";
+                Statement st = con.createStatement();
+
+                ResultSet rs = st.executeQuery("SELECT * FROM `DRIVER` WHERE `EMAIL` = '"+email_entered+"';");
+
+
+
+                ResultSetMetaData rsmd = rs.getMetaData();
+                //  user user1 = new user();
+                while (rs.next()) {                                         //-> to run with ddl
+                    output += rs.getString(1).toString() + "\n"; // TO DETERMINE WHICH COLUMN INFO WE ARE GETTING!
+                    //   user1.name = rs.getString(1).toString();
+                    //   user1.email = rs.getString(2).toString();
+                    //   user1.phone = rs.getString(4);
+
+                }
+
+                System.out.println("user"+output);
+
+                //  new_username = user1.getName();
+                //  new_email = user1.getEmail();
+                //   new_phone = user1.getPhone();
+                res = output;
+
+
+
+            } catch (ClassNotFoundException e) {
+                e.printStackTrace();
+            } catch (SQLException throwables) {
+                throwables.printStackTrace();
+            }
+            System.out.println(res+"res");
+            return res;
+
+        }
+
+
+        @Override
+        protected void onPostExecute(String s) {
+            System.out.println(s);
+
+
+            if (s==null){
+                Toast.makeText(getActivity(),"INVALID DETAILS QQ", Toast.LENGTH_SHORT).show();
+            }
+            else if (s!=null) {
+
+                Toast.makeText(getActivity(), "WELCOME BACK "+s, Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(getActivity(), Homepage.class);  //from and to ----------------------------!!!!!!!!
+                startActivity(intent);  //to open login page
+
+            }
+        }
+    }
+
 
 
 
@@ -424,6 +500,75 @@ public class LogInFragment extends Fragment {
                 SendMail sm = new SendMail(getActivity(),email_entered,"OTP FOR LOGIN","YOUR OTP IS"+otp_gen);
                 sm.execute();
                Toast.makeText(getActivity(), "OTP has been sent", Toast.LENGTH_SHORT).show();
+
+//                Toast.makeText(getActivity(), "WELCOME BACK "+s, Toast.LENGTH_SHORT).show();
+//                Intent intent = new Intent(getActivity(), Homepage.class);  //from and to ----------------------------!!!!!!!!
+//                startActivity(intent);  //to open login page
+
+            }
+            else  {
+                Toast.makeText(getActivity(),"INVALID DETAILS ", Toast.LENGTH_SHORT).show();
+            }
+        }
+    }
+
+    private class ConnectorLoginotpdriver extends AsyncTask<String,Void,String> {
+        String res = "";
+        @Override
+        protected String doInBackground(String... strings) {
+            try {
+                Class.forName("com.mysql.jdbc.Driver");
+                Connection con = DriverManager.getConnection(url, user, pass);
+                System.out.println("Databaseection success");
+
+                String result = "Database Connection Successful\n";
+                String output = "";
+                Statement st = con.createStatement();
+
+                ResultSet rs = st.executeQuery("SELECT * FROM `DRIVER` WHERE `EMAIL` = '"+email_entered+"';");
+
+
+
+                ResultSetMetaData rsmd = rs.getMetaData();
+                //  user user1 = new user();
+                while (rs.next()) {                                         //-> to run with ddl
+                    output += rs.getString(1).toString() + "\n"; // TO DETERMINE WHICH COLUMN INFO WE ARE GETTING!
+                    //   user1.name = rs.getString(1).toString();
+                    //   user1.email = rs.getString(2).toString();
+                    //   user1.phone = rs.getString(4);
+
+                }
+
+                System.out.println("user"+output);
+
+                //  new_username = user1.getName();
+                //  new_email = user1.getEmail();
+                //   new_phone = user1.getPhone();
+                res = output;
+
+
+
+            } catch (ClassNotFoundException e) {
+                e.printStackTrace();
+            } catch (SQLException throwables) {
+                throwables.printStackTrace();
+            }
+            System.out.println(res+"res");
+            return res;
+
+        }
+
+
+        @Override
+        protected void onPostExecute(String s) {
+            System.out.println(s);
+
+
+            if (s!=null){
+
+                SendMail sm = new SendMail(getActivity(),email_entered,"OTP FOR LOGIN","YOUR OTP IS"+otp_gen);
+                sm.execute();
+                Toast.makeText(getActivity(), "OTP has been sent", Toast.LENGTH_SHORT).show();
 
 //                Toast.makeText(getActivity(), "WELCOME BACK "+s, Toast.LENGTH_SHORT).show();
 //                Intent intent = new Intent(getActivity(), Homepage.class);  //from and to ----------------------------!!!!!!!!
