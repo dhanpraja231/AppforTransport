@@ -11,18 +11,17 @@
         android:layout_width="360sp"
         android:layout_height="wrap_content"
 
-        android:textColorHint="@color/white"
         android:hint="Email"
         android:inputType="textEmailAddress"
         android:minHeight="48dp"
         android:textColor="#D3D3D3"
+        android:textColorHint="@color/white"
         app:layout_constraintBottom_toTopOf="@+id/password_login"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.49"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.587" />
-
+        app:layout_constraintVertical_bias="0.447" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -75,17 +74,18 @@
         android:id="@+id/password_login"
         android:layout_width="360sp"
         android:layout_height="wrap_content"
-        android:textColorHint="@color/white"
         android:hint="Password"
         android:inputType="textPassword"
         android:minHeight="48dp"
         android:textColor="#D3D3D3"
+        android:textColorHint="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.49"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.578" />
+        app:layout_constraintVertical_bias="0.717" />
+
 
     <TextView
         android:id="@+id/textView"
@@ -99,23 +99,24 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.644" />
 
     <EditText
         android:id="@+id/otp_login"
         android:layout_width="360sp"
         android:layout_height="wrap_content"
-        android:textColorHint="@color/white"
         android:hint="Enter OTP"
-        android:inputType="textPassword"
+        android:inputType="numberPassword"
         android:minHeight="48dp"
         android:textColor="#D3D3D3"
+        android:textColorHint="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.49"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.424" />
+        app:layout_constraintVertical_bias="0.379" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/login_button"
@@ -124,13 +125,30 @@
         android:layout_height="wrap_content"
 
         android:background="@drawable/sign_up_button_gradient"
-        android:text="LOGIN"
+        android:text="LOGIN WITH PASSWORD"
+        android:textColor="@android:color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.49"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.767" />
+        app:layout_constraintVertical_bias="0.805" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/login_otp_button"
+
+        android:layout_width="360sp"
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/white"
+
+        android:background="@drawable/sign_up_button_gradient"
+        android:text="LOGIN WITH OTP"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.49"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.576" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/send_otp"
@@ -144,21 +162,21 @@
         app:layout_constraintHorizontal_bias="0.094"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.672" />
+        app:layout_constraintVertical_bias="0.483" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/forgot_pwd"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:background="@drawable/login_forgot_password"
         android:text="Forgot Password"
         android:textColor="#0000FF"
-        android:background="@drawable/login_forgot_password"
 
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.907"
+        app:layout_constraintHorizontal_bias="0.902"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.672" />
+        app:layout_constraintVertical_bias="0.483" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
