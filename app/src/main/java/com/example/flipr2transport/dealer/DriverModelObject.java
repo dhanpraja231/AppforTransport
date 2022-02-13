@@ -3,13 +3,13 @@ package com.example.flipr2transport.dealer;
 public class DriverModelObject {
     String name;
     String truckNo;
-    int mobile;
-    int truckCapacity;
-    int drivingExperience;
+    String mobile;
+    String truckCapacity;
+    String drivingExperience;
     String transporterName;
-    int age;
+    String age;
 
-    public DriverModelObject(String name, String truckNo, int mobile, int truckCapacity, int drivingExperience, String transporterName, int age) {
+    public DriverModelObject(String name, String truckNo, String mobile, String truckCapacity, String drivingExperience, String transporterName, String age) {
         this.name = name;
         this.truckNo = truckNo;
         this.mobile = mobile;

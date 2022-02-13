@@ -6,22 +6,22 @@
         <entry key="..\:/Users/dhanp/AndroidStudioProjects/Flipr2Transport/app/src/main/res/drawable/login_forgot_password.xml" value="0.351" />
         <entry key="..\:/Users/dhanp/AndroidStudioProjects/Flipr2Transport/app/src/main/res/drawable/login_other_button_gradient.xml" value="0.1905" />
         <entry key="..\:/Users/dhanp/AndroidStudioProjects/Flipr2Transport/app/src/main/res/drawable/sign_up_button_gradient.xml" value="0.11" />
-        <entry key="..\:/Users/dhanp/AndroidStudioProjects/Flipr2Transport/app/src/main/res/drawable/spinner_item.xml" value="0.1" />
-        <entry key="..\:/Users/dhanp/AndroidStudioProjects/Flipr2Transport/app/src/main/res/layout/activity_dealer_advanced_search.xml" value="0.23958333333333334" />
-        <entry key="..\:/Users/dhanp/AndroidStudioProjects/Flipr2Transport/app/src/main/res/layout/activity_driver_home_page.xml" value="0.23958333333333334" />
         <entry key="..\:/Users/dhanp/AndroidStudioProjects/Flipr2Transport/app/src/main/res/layout/activity_main.xml" value="0.33" />
         <entry key="..\:/Users/dhanp/AndroidStudioProjects/Flipr2Transport/app/src/main/res/layout/log_in_fragment.xml" value="0.33" />
         <entry key="..\:/Users/dhanp/AndroidStudioProjects/Flipr2Transport/app/src/main/res/layout/sign_up_dealer_fragmen.xml" value="0.3625" />
-        <entry key="..\:/Users/dhanp/AndroidStudioProjects/Flipr2Transport/app/src/main/res/layout/sign_up_dealer_fragment.xml" value="0.25" />
+        <entry key="..\:/Users/dhanp/AndroidStudioProjects/Flipr2Transport/app/src/main/res/layout/sign_up_dealer_fragment.xml" value="0.3625" />
         <entry key="..\:/Users/dhanp/AndroidStudioProjects/Flipr2Transport/app/src/main/res/layout/sign_up_driver_fragment.xml" value="0.33" />
-        <entry key="app/src/main/res/layout/activity_dealer_home_page.xml" value="0.146875" />
+        <entry key="app/src/main/res/layout/activity_dealer_advanced_search.xml" value="0.296875" />
+        <entry key="app/src/main/res/layout/activity_dealer_home_page.xml" value="0.2767044067382813" />
+        <entry key="app/src/main/res/layout/activity_driver_home_page.xml" value="0.296875" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.146875" />
         <entry key="app/src/main/res/layout/content_driver_home_page.xml" value="0.146875" />
+        <entry key="app/src/main/res/layout/for_dealer_driver_data_viewholder_.xml" value="0.146875" />
         <entry key="app/src/main/res/layout/fragment_first.xml" value="0.146875" />
         <entry key="app/src/main/res/layout/fragment_second.xml" value="0.146875" />
         <entry key="app/src/main/res/layout/homepage.xml" value="0.14437689969604864" />
-        <entry key="app/src/main/res/layout/log_in_fragment.xml" value="0.1" />
-        <entry key="app/src/main/res/layout/sign_up_dealer_fragment.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/log_in_fragment.xml" value="0.293829345703125" />
+        <entry key="app/src/main/res/layout/sign_up_dealer_fragment.xml" value="0.146875" />
         <entry key="app/src/main/res/layout/sign_up_driver_fragment.xml" value="0.335" />
       </map>
     </option>

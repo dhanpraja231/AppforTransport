@@ -14,6 +14,9 @@ import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
 
+import com.example.flipr2transport.dealer.DealerHomePage;
+import com.example.flipr2transport.driver.DriverHomePage;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -26,6 +29,7 @@ public class LogInFragment extends Fragment {
 
     RadioGroup radioGroup;
     RadioButton radioButton;
+    public static String user_name,user_email,user_city,user_state;
 
 
     public String email_entered,password_entered;
@@ -83,6 +87,9 @@ public class LogInFragment extends Fragment {
 
                             ConnectorLogindriver login = new ConnectorLogindriver();
                             login.execute("");
+
+
+
                             //for driver
 
                         } else if (occupation.equals(dealer)) {
@@ -187,6 +194,13 @@ public class LogInFragment extends Fragment {
 
                 String result = "Database Connection Successful\n";
                 String output = "";
+
+                String namer_db = "";
+                String email_db = "";
+                String city_db = "";
+                String state_db = "";
+
+
                 Statement st = con.createStatement();
 
                 ResultSet rs = st.executeQuery("SELECT * FROM `DEALER` WHERE `EMAIL` = '"+email_entered+"' AND `PASSWORD` = '"+password_entered+"';");
@@ -197,11 +211,23 @@ public class LogInFragment extends Fragment {
               //  user user1 = new user();
                 while (rs.next()) {                                         //-> to run with ddl
                     output += rs.getString(1).toString() + "\n"; // TO DETERMINE WHICH COLUMN INFO WE ARE GETTING!
-                 //   user1.name = rs.getString(1).toString();
-                 //   user1.email = rs.getString(2).toString();
-                 //   user1.phone = rs.getString(4);
+
+                    namer_db +=rs.getString(1);
+                    email_db +=rs.getString(2);
+                    city_db +=rs.getString(8);
+                    state_db +=rs.getString(9);
+
+
+
 
                 }
+
+                user_name = namer_db;
+                user_email = email_db;
+                user_city = city_db;
+                user_state = state_db;
+
+
 
                 System.out.println("user"+output);
 
@@ -234,7 +260,7 @@ public class LogInFragment extends Fragment {
             else if (s!=null) {
 
                 Toast.makeText(getActivity(), "WELCOME BACK "+s, Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(getActivity(), Homepage.class);  //from and to ----------------------------!!!!!!!!
+                Intent intent = new Intent(getActivity(), DealerHomePage.class);  //from and to ----------------------------!!!!!!!!
                 startActivity(intent);  //to open login page
 
             }
@@ -244,6 +270,7 @@ public class LogInFragment extends Fragment {
 
     private class ConnectorLogin2 extends AsyncTask<String,Void,String> {
         String res = "";
+
         @Override
         protected String doInBackground(String... strings) {
             try {
@@ -295,7 +322,7 @@ public class LogInFragment extends Fragment {
 
             if (s!=null){
                 Toast.makeText(getActivity(), "WELCOME BACK "+s, Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(getActivity(), Homepage.class);  //from and to ----------------------------!!!!!!!!
+                Intent intent = new Intent(getActivity(), DriverHomePage.class);  //from and to ----------------------------!!!!!!!!
                 startActivity(intent);  //to open login page
 
             }
@@ -317,6 +344,12 @@ public class LogInFragment extends Fragment {
 
                 String result = "Database Connection Successful\n";
                 String output = "";
+
+                String namer_db = "";
+                String email_db = "";
+                String city_db = "";
+                String state_db = "";
+
                 Statement st = con.createStatement();
 
                 ResultSet rs = st.executeQuery("SELECT * FROM `DEALER` WHERE `EMAIL` = '"+email_entered+"';");
@@ -327,17 +360,17 @@ public class LogInFragment extends Fragment {
                 //  user user1 = new user();
                 while (rs.next()) {                                         //-> to run with ddl
                     output += rs.getString(1).toString() + "\n"; // TO DETERMINE WHICH COLUMN INFO WE ARE GETTING!
-                    //   user1.name = rs.getString(1).toString();
-                    //   user1.email = rs.getString(2).toString();
-                    //   user1.phone = rs.getString(4);
-
+                    namer_db +=rs.getString(1);
+                    email_db +=rs.getString(2);
+                    city_db +=rs.getString(8);
+                    state_db +=rs.getString(9);
                 }
 
-                System.out.println("user"+output);
-
-                //  new_username = user1.getName();
-                //  new_email = user1.getEmail();
-                //   new_phone = user1.getPhone();
+                //System.out.println("user"+output);
+                user_name = namer_db;
+                user_email = email_db;
+                user_city = city_db;
+                user_state = state_db;
                 res = output;
 
 
@@ -364,7 +397,7 @@ public class LogInFragment extends Fragment {
             else if (s!=null) {
 
                 Toast.makeText(getActivity(), "WELCOME BACK "+s, Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(getActivity(), Homepage.class);  //from and to ----------------------------!!!!!!!!
+                Intent intent = new Intent(getActivity(), DealerHomePage.class);  //from and to ----------------------------!!!!!!!!
                 startActivity(intent);  //to open login page
 
             }
@@ -430,7 +463,7 @@ public class LogInFragment extends Fragment {
             else if (s!=null) {
 
                 Toast.makeText(getActivity(), "WELCOME BACK "+s, Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(getActivity(), Homepage.class);  //from and to ----------------------------!!!!!!!!
+                Intent intent = new Intent(getActivity(), DriverHomePage.class);  //from and to ----------------------------!!!!!!!!
                 startActivity(intent);  //to open login page
 
             }
