@@ -1,5 +1,8 @@
 # Flipr2Transport
 
+
+download android studio from the official website.
+then open android studio -> open -> get from VCS -> enter clone link then
 clone the project on android studio.
 
 for deployment of backend on xampp->phpmyadmin, run the following schema. 
